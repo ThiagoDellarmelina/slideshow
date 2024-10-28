@@ -4,199 +4,127 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Escola Evangélica Betel</title>
+    <title>Slideshow de Imagens e Vídeos</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f5f5f5;
             margin: 0;
             padding: 0;
-        }
-
-        header {
-            background: linear-gradient(135deg, #0D6EFD, #28a745, #FFDD57, #ff0000);
-            background-size: 400% 400%;
-            animation: gradient 10s ease infinite;
-            color: white;
-            text-align: center;
-            padding: 30px 20px;
-            position: relative;
-        }
-
-        @keyframes gradient {
-            0% {
-                background-position: 0% 50%;
-            }
-            50% {
-                background-position: 100% 50%;
-            }
-            100% {
-                background-position: 0% 50%;
-            }
-        }
-
-        header::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.5);
-            z-index: 1;
-        }
-
-        header h1,
-        header p {
-            position: relative;
-            z-index: 2;
-        }
-
-        header h1 {
-            font-size: 1.8em;
-            margin: 10px 0;
-        }
-
-        header img {
-            position: relative;
-            z-index: 2;
-            max-width: 120px;
-            margin-bottom: 10px;
-        }
-
-        /* Fundo para a seção entre o cabeçalho e o rodapé */
-        .content-background {
-            background-image: url('Design_of_a_vibrant_and_welcoming_homepage_for_a_C.png');
-            background-size: 100% 100%;
-            background-position: center;
-            background-repeat: no-repeat;
-            padding: 30px 0;
-            min-height: 800px;
-            box-sizing: border-box;
+            height: 100vh;
             display: flex;
-            flex-direction: column;
-            justify-content: flex-end;
-        }
-
-        .card-container {
-            display: flex;
+            align-items: center;
             justify-content: center;
-            gap: 20px;
-            margin-top: 0;
+            background-color: black;
+            color: white;
         }
 
-        .card {
-            background-color: #fff;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            padding: 20px;
-            width: 200px;
-            text-align: center;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        #slideshow-container {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            position: relative;
         }
 
-        .card a {
+        #slideshow-container img,
+        #slideshow-container video {
+            max-width: 100%;
+            max-height: 100%;
+            width: auto;
+            height: auto;
             display: block;
-            color: #0D6EFD;
-            text-decoration: none;
-            font-weight: bold;
-            margin-top: 10px;
+            object-fit: contain;
         }
 
-        .buttons {
-            text-align: center;
-            margin-top: 10px;
-            margin-bottom: 0;
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-            flex-wrap: wrap;
-        }
-
-        .buttons a {
-            background-color: #FFDD57;
-            color: #000;
+        /* Estilo do botão de Tela Cheia */
+        #fullscreen-button {
+            position: absolute;
+            top: 20px;
+            right: 20px;
             padding: 10px 20px;
-            text-decoration: none;
-            border-radius: 5px;
-            flex: 1 1 auto;
-            max-width: 150px;
-            box-sizing: border-box;
-            margin: 5px;
-        }
-
-        .buttons a.enroll {
-            background-color: #0D6EFD;
-            color: #fff;
-        }
-
-        footer {
-            background: linear-gradient(135deg, #0D6EFD, #28a745, #FFDD57, #ff0000);
-            background-size: 400% 400%;
-            animation: gradient 10s ease infinite;
-            color: white;
-            text-align: center;
-            padding: 20px;
-            margin-top: -5px;
-        }
-
-        footer p {
-            margin: 0;
-            font-size: 1em;
-        }
-
-        /* Ajuste para telas pequenas */
-        @media (max-width: 600px) {
-            .buttons {
-                flex-direction: column; /* Empilha os botões verticalmente */
-            }
-
-            .buttons a {
-                width: 90%; /* Cada botão ocupa 90% da largura da tela */
-                max-width: 90%;
-                margin: 5px auto; /* Centraliza e aproxima mais os botões */
-            }
+            background-color: rgba(255, 255, 255, 0.8);
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            z-index: 10;
         }
     </style>
 </head>
 
 <body>
 
-    <header>
-        <img src="escola_evanglica_betel_logo.png" alt="Logo Escola Evangélica Betel">
-        <h1>Bem-vindo à Escola Evangélica Betel</h1>
-        <p>Educação infantil com princípios cristãos e amor ao próximo.</p>
-    </header>
-
-    <!-- Seção com imagem de fundo para todo o conteúdo entre header e footer -->
-    <div class="content-background">
-        <!-- Cartões para AVA Betel e Tour 360 Betel -->
-        <div class="card-container">
-            <div class="card">
-                <h2>AVA Betel</h2>
-                <p>Acesse o Ambiente Virtual de Aprendizagem</p>
-                <a href="https://ava.escolaevangelicabetel.com">Acessar AVA Betel</a>
-            </div>
-            <div class="card">
-                <h2>Tour 360 Betel</h2>
-                <p>Faça um tour virtual pela nossa escola</p>
-                <a href="https://tour360.escolaevangelicabetel.com">Acessar Tour 360</a>
-            </div>
-        </div>
-        <br><br>
-
-        <!-- Botões abaixo dos cartões -->
-        <div class="buttons">
-            <a href="#">Nossos Programas</a>
-            <a href="#" class="enroll">Matricule-se Agora</a>
-            <a href="#">Fale Conosco</a>
-        </div>
+    <div id="slideshow-container">
+        <img id="slideshow-image" style="display: block;">
+        <video id="slideshow-video" autoplay loop style="display: none;"></video>
+        <button id="fullscreen-button" onclick="enterFullScreen()">Tela Cheia</button>
     </div>
 
-    <footer>
-        <p>Av. Silves, nº 1852 - Crespo, Manaus-AM | Contato: (92) 3613-3695 | WhatsApp: (92) 98599-6270</p>
-        <p>&copy; 2024 Escola Evangélica Betel</p>
-    </footer>
+    <!-- <script>
+    // Lista de mídia (imagens e vídeos)
+    const mediaPaths = [
+        'assets/20241021_101134.jpg',
+        'assets/20241021_100154.jpg',
+        'assets/20241021_180401.jpg',
+        'assets/20241021_213749.jpg',
+        'assets/20241025_175646.jpg',
+        'assets/20241025_175705.jpg',
+        'assets/20241025_225308.jpg',
+        'assets/20241025_225320.jpg',
+        'assets/20211219_185342.mp4',
+        'assets/20241024_220506_99.mp4',
+        'assets/657b637f1ffe316e9894d615be8f6952.mp4'
+    ]; -->
+    <script>
+        // Lista de mídia (imagens e vídeos)
+        const mediaPaths = [
+            'assets/a.jpg',
+            'assets/b.jpg',
+            'assets/c.mp4',
+            'assets/d.mp4',
+            'assets/davi.jpg'
+        ];
+
+        let currentIndex = 0;
+        const slideshowImage = document.getElementById('slideshow-image');
+        const slideshowVideo = document.getElementById('slideshow-video');
+
+        // Função para atualizar a mídia do slideshow
+        function updateMedia() {
+            const mediaPath = mediaPaths[currentIndex];
+            const isVideo = mediaPath.endsWith('.mp4');
+
+            if (isVideo) {
+                slideshowImage.style.display = 'none';
+                slideshowVideo.style.display = 'block';
+                slideshowVideo.src = mediaPath;
+                slideshowVideo.play();
+            } else {
+                slideshowVideo.style.display = 'none';
+                slideshowImage.style.display = 'block';
+                slideshowImage.src = mediaPath;
+            }
+
+            currentIndex = (currentIndex + 1) % mediaPaths.length;
+        }
+
+        // Função para ativar o modo de tela cheia
+        function enterFullScreen() {
+            const elem = document.documentElement;
+            if (elem.requestFullscreen) {
+                elem.requestFullscreen();
+            } else if (elem.mozRequestFullScreen) { // Firefox
+                elem.mozRequestFullScreen();
+            } else if (elem.webkitRequestFullscreen) { // Safari
+                elem.webkitRequestFullscreen();
+            } else if (elem.msRequestFullscreen) { // IE/Edge
+                elem.msRequestFullscreen();
+            }
+        }
+
+        // Inicia o slideshow e altera a mídia a cada 5 segundos
+        setInterval(updateMedia, 5000);
+    </script>
 
 </body>
 
